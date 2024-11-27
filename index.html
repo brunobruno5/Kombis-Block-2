@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kombinationen lernen</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            color: #1a73e8;
+        }
+        .combo-display {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            background-color: #e1f5fe;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            min-width: 300px;
+        }
+        button {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #1565c0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lerne die Kombinationen!</h1>
+        <div id="combo" class="combo-display">Kombination wird hier angezeigt...</div>
+        <button id="loadComboBtn">Zeige mir eine zufällige Kombination!</button>
+    </div>
+
+    <script>
+        // Die vollständigen Kombinationen
+        const combinations = [
+            'CostaPrima + Tarsalgelenke',
+            'Ossacrum + Art. glenohumeralis',
+            'Distale Tibia + Bänder der Wirbelsäule',
+            'Schädel von lateral + art. Capitiscostae',
+            'Proximaler Humerus + LisFrancsche Gelenklinie',
+            'Costa + Tarsalgelenke',
+            'Talus + Art. Sternoclavicularis',
+            'Sellaturcica + Bänder des Beckens',
+            'Sellaturcica + Art. costovertebralis',
+            'Osischii + Art. carpometacarpalis 5',
+            'Schädel von vorne + Art. Radiocarpalis',
+            'Oscoxae + Acromioclaviculargelenk',
+            'Vertebrae thoracicae + Metatarsalgelenke',
+            'Calcaneus + Art. Radioulnaris distalis',
+            'Vordere Schädelgrube + Art. cubiti',
+            'Radius + Bänder des Beckens',
+            'Patella + radioulnare Verbindungen',
+            'Proximale Tibia + Art. atlantoaxialis',
+            'Dentes + Unteres Sprunggelenk',
+            'Calvaria + Art. genus (inkl. Gelenkachsen)',
+            'Schädel lateral + art. capitiscostae',
+            'Os frontale + Knie',
+            'Clavicula + pelvis',
+            'Talus + art. sternoclavicularis',
+            'Orbita + Art. Tibiofibularis (nur die Diarthrose, also nur proximal)',
+            'FOsmetacarpale 1 + art. zygapophysiales',
+            'Fibula + Art. Atlantooccipitalis',
+            'Hintere Schädelgrube + Tarsalgelenke',
+            'Costa + Art. Carpometacarpalis pollicis',
+            'Orbita + Art. Tibiofibularis',
+            'Scapula + Syndesmosis tibiofibularis',
+            'Clavicula + Articulatio coxae',
+            'Foramen intervertebrale + Bänder des Carpus (eigentlich nicht auf Liste)',
+            'Canalis vertebralis + Art. Humeri',
+            'Carpus + Verbindung der Tibia und Fibula',
+            'Hintere Schädelgrube + Chopart-Gelenk',
+            'Os Pubis + Art. Mediocarpale',
+            'Tarsus + Art. atlantooccipitalis',
+            'Tarsalgelenke + hintere Schädelgrube',
+            'Os occipitale + Art. carpometacarpalis pollicis',
+            'Art. coxae | Carpus',
+            'Calcaneus + Bänder der WS',
+            'Distaler Femur + Bänder des Carpus',
+            'Art. coxae + clavicula',
+            'Art. Cubiti + Vordere Schädelgrube',
+            'Carpus + Anteile der Art. genus',
+            'Prox. Femur + Artt. Metacarpophalangeae',
+            'Schädel lateral + art. capitiscostae',
+            'Atlas + oberes Sprunggelenk',
+            'Vertebrae lumbales + Artt. interphalangeae'
+        ];
+
+        // Funktion, um eine zufällige Kombination auszuwählen
+        function getRandomCombination() {
+            const randomIndex = Math.floor(Math.random() * combinations.length);
+            return combinations[randomIndex];
+        }
+
+        // Button Event-Listener, um eine neue Kombination anzuzeigen
+        document.getElementById('loadComboBtn').addEventListener('click', function() {
+            const comboDisplay = document.getElementById('combo');
+            comboDisplay.textContent = getRandomCombination();
+        });
+    </script>
+</body>
+</html>
